@@ -23,6 +23,9 @@ namespace par {
     template<typename T>
     T str_convert(const std::string &s);
     
+	template<> inline
+	std::string str_convert<std::string>(const std::string &s);
+
     class Params
     {
         std::map<std::string, std::vector<std::string> >	data;
@@ -62,7 +65,7 @@ namespace par {
         return result;
     }
     
-	template<typename T>
+	template<typename T> inline
 	T str_convert(const std::string &s)
 	{
 		T result;
